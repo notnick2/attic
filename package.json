@@ -1,0 +1,29 @@
+{
+  "name": "attic",
+  "productName": "Attic",
+  "version": "0.2.0",
+  "description": "The age of personal software is here. A local-first place for your work, starting as a kanban board.",
+  "author": "notnick2",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/notnick2/attic.git" },
+  "private": true,
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js --open",
+    "electron": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.notnick2.attic",
+    "productName": "Attic",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "store.js", "preload.cjs", "public/**"],
+    "win": { "target": "nsis", "icon": "build/icon.png" },
+    "nsis": { "oneClick": true, "perMachine": false, "deleteAppDataOnUninstall": false }
+  }
+}
